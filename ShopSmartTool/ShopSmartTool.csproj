@@ -119,9 +119,7 @@
   <ItemGroup>
     <Resource Include="View\Images\ShopSmart.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\Convertors\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="View\Images\addCart.ico" />
     <Resource Include="View\Images\removeCart.ico" />

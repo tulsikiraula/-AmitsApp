@@ -94,17 +94,12 @@ namespace ShopSmartTool.ViewModel
         /// </summary>
         public ShopSmartToolViewModel()
         {
-            // Initializing the container and registering the services
             _container = new UnityContainer();
             _container.RegisterType<IItemsRepository, ItemsRepository>();
             _container.RegisterType<IItemsUoW, ItemsUoW>();
             _container.RegisterType<IItemsService, ItemsService>();
-
-            // Initializing the commands
             AddToCartCommand = new RelayCommand(AddToCart);
             RemoveFromCartCommand = new RelayCommand(RemoveFromCart);
-
-            // Retreive the products now
             _itemService = _container.Resolve<IItemsService>();
             if (_itemService != null)
                 ItemsList = new ObservableCollection<Items>(_itemService.GetAllItems());
@@ -140,14 +135,6 @@ namespace ShopSmartTool.ViewModel
                 ItemsSelected = ItemsSelected.Remove(ItemsSelected.Length - 1);
                 TotalAmount = string.Concat("£", _itemService.CalculateTotalAmount(ItemsSelected).ToString());
             }
-        }
-        /// <summary>
-        /// Delete items from the cart
-        /// </summary>
-        /// <param name="obj"></param>
-        private void DeleteFromCart(object obj)
-        {
-
         }
         #endregion Private Methods
     }

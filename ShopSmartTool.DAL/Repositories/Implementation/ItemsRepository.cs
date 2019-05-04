@@ -8,7 +8,7 @@ namespace ShopSmartTool.DAL.Repositories
     public class ItemsRepository : IItemsRepository
     {
         #region Private Variables
-        private Dictionary<string, int> _productsCollectionWithCount;
+        private Dictionary<string, int> _itemsWithCount;
         private const string _productOfferA = "Buy 3 for 130";
         private const string _productOfferB = "Buy 2 for 45";
         private const string _default = "No offers";
@@ -36,39 +36,53 @@ namespace ShopSmartTool.DAL.Repositories
         /// <returns>int</returns>
         public int CalculateTotalAmount(string selectedItem)
         {
-            int totalPrice = 0;
-            _productsCollectionWithCount = new Dictionary<string, int>
+            int price = 0;
+            _itemsWithCount = new Dictionary<string, int>
                 {
                     { "A", selectedItem.Where(x => x == 'A').Count() },
                     { "B", selectedItem.Where(x => x == 'B').Count() },
                     { "C", selectedItem.Where(x => x == 'C').Count() },
                     { "D", selectedItem.Where(x => x == 'D').Count() }
                 };
+            if (_itemsWithCount != null)
+            {
+                var effectiveCounts = _itemsWithCount.Where(o => o.Value > 0);
+                foreach (var item in effectiveCounts)
+                {
 
-            totalPrice = CalculateTotalAmountWithOffers(_productsCollectionWithCount["A"], 3, 130, 50);
-            totalPrice += CalculateTotalAmountWithOffers(_productsCollectionWithCount["B"], 2, 45, 30);
-            totalPrice += CalculateTotalAmountWithOffers(_productsCollectionWithCount["C"], 1, 20, 20);
-            totalPrice += CalculateTotalAmountWithOffers(_productsCollectionWithCount["D"], 1, 15, 15);
-            
-            return totalPrice;
+                    int quotient = 0;
+                    int rem = 0;
+                  
+                    if (item.Key == "A")
+                    {
+                        int itemPrice = 50;
+                        int discount = 130;
+                        quotient = item.Value / 3;
+                        rem = item.Value % 3;
+                        price += quotient * discount + rem * itemPrice;
+                    }
+                    if (item.Key == "B")
+                    {
+                        int itemPrice = 30;
+                        int discount = 45;
+                        quotient = item.Value / 2;
+                        rem = item.Value % 2;
+                        price += quotient * discount + rem * itemPrice;
+                    }
+                    if (item.Key == "C")
+                    {
+                        int itemPrice = 20;
+                        price += item.Value * itemPrice;
+                    }
+                    if (item.Key == "D")
+                    {
+                        int itemPrice = 15;                     
+                        price += item.Value * itemPrice;
+                    }
+                }
+            }
+            return price;
         }
         #endregion Public Methods
-
-        #region Private Methods
-        /// <summary>
-        /// Calculate the amount based on offers
-        /// </summary>
-        /// <param name="productOccurence">int</param>
-        /// <param name="itemsRequiredToAvailOffer">int</param>
-        /// <param name="offerPrize">int</param>
-        /// <param name="singleProductPrize">int</param>
-        /// <returns>int</returns>
-        private int CalculateTotalAmountWithOffers(int productOccurence, int itemsRequiredToAvailOffer, int offerPrize, int singleProductPrize)
-        {
-            int noOfgroups = 0;//Math.DivRem(productOccurence, itemsRequiredToAvailOffer, out int result);
-            int result = 0;
-            return noOfgroups * offerPrize + result * singleProductPrize;
-        }
-        #endregion Private Methods
     }
 }
