@@ -1,0 +1,4 @@
+D:\ShopSmartTool\bin\ShopSmartTool.Entities.dll
+D:\ShopSmartTool\bin\ShopSmartTool.Entities.pdb
+D:\ShopSmartTool\ShopSmartTool.Entities\obj\Debug\ShopSmartTool.Entities.dll
+D:\ShopSmartTool\ShopSmartTool.Entities\obj\Debug\ShopSmartTool.Entities.pdb

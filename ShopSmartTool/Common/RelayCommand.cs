@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace GoShopping.App.Common
+namespace ShopSmartTool.Common
 {
     public class RelayCommand : ICommand
     {

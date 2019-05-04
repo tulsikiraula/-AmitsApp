@@ -1,0 +1,4 @@
+D:\ShopSmartTool\ShopSmartTool.UnitTests\bin\Debug\ShopSmartTool.UnitTests.dll
+D:\ShopSmartTool\ShopSmartTool.UnitTests\bin\Debug\ShopSmartTool.UnitTests.pdb
+D:\ShopSmartTool\ShopSmartTool.UnitTests\obj\Debug\ShopSmartTool.UnitTests.dll
+D:\ShopSmartTool\ShopSmartTool.UnitTests\obj\Debug\ShopSmartTool.UnitTests.pdb

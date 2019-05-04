@@ -1,0 +1,15 @@
+D:\ShopSmartTool\ShopSmartTool\obj\x86\Debug\View\UI\ShopSmartToolView.baml
+D:\ShopSmartTool\ShopSmartTool\obj\x86\Debug\View\UI\ShopSmartToolView.g.cs
+D:\ShopSmartTool\ShopSmartTool\obj\x86\Debug\View\UI\App.g.cs
+D:\ShopSmartTool\ShopSmartTool\obj\x86\Debug\ShopSmartTool_MarkupCompile.cache
+D:\ShopSmartTool\ShopSmartTool\obj\x86\Debug\ShopSmartTool.g.resources
+D:\ShopSmartTool\ShopSmartTool\obj\x86\Debug\ShopSmartTool.Properties.Resources.resources
+D:\ShopSmartTool\ShopSmartTool\obj\x86\Debug\ShopSmartTool.csproj.GenerateResource.Cache
+D:\ShopSmartTool\ShopSmartTool\obj\x86\Debug\ShopSmartTool.csprojResolveAssemblyReference.cache
+D:\ShopSmartTool\bin\ShopSmartTool.exe
+D:\ShopSmartTool\bin\ShopSmartTool.pdb
+D:\ShopSmartTool\ShopSmartTool\obj\x86\Debug\ShopSmartTool.exe
+D:\ShopSmartTool\ShopSmartTool\obj\x86\Debug\ShopSmartTool.pdb
+D:\ShopSmartTool\ShopSmartTool\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\ShopSmartTool\ShopSmartTool\obj\x86\Debug\ShopSmartTool_MarkupCompile.lref
+D:\ShopSmartTool\ShopSmartTool\obj\x86\Debug\View\ResourceDictionary\ShopSmartToolResources.baml

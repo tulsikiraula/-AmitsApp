@@ -1,0 +1,5 @@
+D:\ShopSmartTool\ShopSmartTool.DAL\obj\Debug\ShopSmartTool.DAL.csprojResolveAssemblyReference.cache
+D:\ShopSmartTool\bin\ShopSmartTool.DAL.dll
+D:\ShopSmartTool\bin\ShopSmartTool.DAL.pdb
+D:\ShopSmartTool\ShopSmartTool.DAL\obj\Debug\ShopSmartTool.DAL.dll
+D:\ShopSmartTool\ShopSmartTool.DAL\obj\Debug\ShopSmartTool.DAL.pdb

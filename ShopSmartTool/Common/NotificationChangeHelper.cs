@@ -1,14 +1,23 @@
 ﻿using System.ComponentModel;
 
-namespace GoShopping.App.Common
+namespace ShopSmartTool.Common
 {
-    public class PropertyChangeNotifier : INotifyPropertyChanged
+    public class NotificationChangeHelper : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler of Property changed
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
-
+        /// <summary>
+        /// Raises the proprty by name 
+        /// </summary>
+        /// <param name="propertyName"></param>
         protected void OnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }
