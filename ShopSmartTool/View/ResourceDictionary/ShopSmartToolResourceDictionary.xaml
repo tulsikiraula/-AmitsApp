@@ -25,5 +25,6 @@
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="Red"/>
         <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
     </Style>
 </ResourceDictionary>

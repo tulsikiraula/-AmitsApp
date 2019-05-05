@@ -15,49 +15,52 @@ namespace ShopSmartTool.UnitTests
     {
 
         ItemsRepository _itemRepository;
+        /// <summary>
+        /// Initiazation
+        /// </summary>
         public UnitTest()
         {
             _itemRepository = new ItemsRepository();
         }
 
         [TestMethod]
-        public void TestMethodForNoProduct()
+        public void TestCaseNoItemSelected()
         {
             Assert.AreEqual(0, _itemRepository.CalculateTotalAmount(""));
         }
 
         [TestMethod]
-        public void TestMethodForSingleProduct()
+        public void TestCaseSingleItemSelected()
         {
             Assert.AreEqual(50, _itemRepository.CalculateTotalAmount("A"));
         }
 
         [TestMethod]
-        public void TestMethodForTwoProducts()
+        public void TestCaseTwoItemsSelected()
         {
             Assert.AreEqual(80, _itemRepository.CalculateTotalAmount("AB"));
         }
 
         [TestMethod]
-        public void TestMethodForFourProducts()
+        public void TestCaseFourItemsSelected()
         {
             Assert.AreEqual(115, _itemRepository.CalculateTotalAmount("CDBA"));
         }
 
         [TestMethod]
-        public void TestMethodForTwoSimilarProducts()
+        public void TestCaseTwoSameItemsSelected()
         {
             Assert.AreEqual(100, _itemRepository.CalculateTotalAmount("AA"));
         }
 
         [TestMethod]
-        public void TestMethodForThreeSimilarProducts()
+        public void TestCaseThreeSameItemsSelected()
         {
             Assert.AreEqual(130, _itemRepository.CalculateTotalAmount("AAA"));
         }
 
         [TestMethod]
-        public void TestMethodForFiveProducts()
+        public void TestCaseFiveItemsSelected()
         {
             Assert.AreEqual(175, _itemRepository.CalculateTotalAmount("AAABB"));
         }

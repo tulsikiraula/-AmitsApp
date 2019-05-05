@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using ShopSmartTool.Common;
 using System.Collections.ObjectModel;
 using ShopSmartTool.Entities;
@@ -10,6 +7,7 @@ using System.Windows.Input;
 using ShopSmartTool.DAL.Services;
 using ShopSmartTool.DAL.Repositories;
 using ShopSmartTool.DAL.UoW;
+using System.Windows;
 
 
 namespace ShopSmartTool.ViewModel
@@ -23,11 +21,9 @@ namespace ShopSmartTool.ViewModel
         private readonly IUnityContainer _container;
         private ObservableCollection<Items> _itemsList;
         private ObservableCollection<ItemsBill> _itemsBillInfo;
-        private Items _selectedItem;
         private string _itemsSelected;
         private int _totalAmount = 0;
         private IItemsService _itemService;
-        private string _specialOffer;
         #endregion Priavte Variables
 
         #region Commands
@@ -37,40 +33,37 @@ namespace ShopSmartTool.ViewModel
         #endregion
 
         #region Public Properties
+        /// <summary>
+        /// List of Items to be shown on UI
+        /// </summary>
         public ObservableCollection<Items> ItemsList
         {
             get { return _itemsList; }
             set { _itemsList = value; OnPropertyChanged("ItemsList"); }
         }
+        /// <summary>
+        /// Bill information for client
+        /// </summary>
         public ObservableCollection<ItemsBill> ItemsBillInfo
         {
             get { return _itemsBillInfo; }
             set { _itemsBillInfo = value; OnPropertyChanged("ItemsBillInfo"); }
         }
-
-        public Items SelectedItem
-        {
-            get { return _selectedItem; }
-            set { _selectedItem = value; OnPropertyChanged("SelectedItem"); }
-        }
-
+        /// <summary>
+        /// Items selected/removed for the cart
+        /// </summary>
         public string ItemsSelected
         {
             get { return _itemsSelected; }
             set { _itemsSelected = value; OnPropertyChanged("ItemsSelected"); }
         }
-
+        /// <summary>
+        /// Total billable amount
+        /// </summary>
         public int TotalAmount
         {
             get { return _totalAmount; }
             set { _totalAmount = value; OnPropertyChanged("TotalAmount"); }
-        }
-
-
-        public string SpecialOffer
-        {
-            get { return _specialOffer; }
-            set { _specialOffer = value; OnPropertyChanged("TotalAmount"); }
         }
 
         #endregion
@@ -103,7 +96,6 @@ namespace ShopSmartTool.ViewModel
         {
             if (obj != null)
                 ItemsSelected += obj.ToString();
-
             // Calculate the total amount when added to the cart
             if (!string.IsNullOrWhiteSpace(ItemsSelected))
             {
@@ -119,12 +111,20 @@ namespace ShopSmartTool.ViewModel
         /// <param name="obj"></param>
         private void RemoveFromCart(object obj)
         {
-            if (!string.IsNullOrWhiteSpace(ItemsSelected) && ItemsSelected.Contains(obj.ToString()))
+            if (obj != null)
             {
-                ItemsSelected = ItemsSelected.Remove(ItemsSelected.IndexOf(obj.ToString()), 1);
-                PrepareItemsBillInfo();
-                TotalAmount = _itemService.CalculateTotalAmount(ItemsSelected);
+                if (!string.IsNullOrWhiteSpace(ItemsSelected) && ItemsSelected.Contains(obj.ToString()))
+                {
+                    // Calculate the total amount when removed from the cart
+                    ItemsSelected = ItemsSelected.Remove(ItemsSelected.IndexOf(obj.ToString()), 1);
+                    PrepareItemsBillInfo();
+                    TotalAmount = _itemService.CalculateTotalAmount(ItemsSelected);
 
+                }
+                else
+                {
+                    MessageBox.Show(string.Concat("No item [", obj.ToString(), "] is available to delete from cart"), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
         /// <summary>

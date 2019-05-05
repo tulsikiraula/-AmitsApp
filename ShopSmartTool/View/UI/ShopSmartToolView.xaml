@@ -59,8 +59,8 @@
         <Grid Grid.Row="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="10" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="20" />
             </Grid.RowDefinitions>
             <GroupBox>
                 <GroupBox.Header>
@@ -81,10 +81,9 @@
                     </ListView>
                 </Grid>
             </GroupBox>
-            <TextBlock Grid.Row="1" HorizontalAlignment="Left" Text="{Binding SpecialOffer}"/>      
             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock VerticalAlignment="Center"  Text="The total billable amount is £:" />
-                <TextBlock Text="{Binding TotalAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource Special}" TextWrapping="Wrap" />
+                <TextBlock VerticalAlignment="Center"  Text="The total billable amount is: £" />
+                <TextBlock Text="{Binding TotalAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ResourceKey=Special}"/>
             </StackPanel>
         </Grid>
     </Grid>

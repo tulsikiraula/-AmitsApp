@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="f0227a59-0ae0-4abc-9160-1f4eb60b436c" name="Tiger(AMIT)@TIGERAMIT-VAIO 2019-05-05 12:41:26" runUser="TigerAMIT-VAIO\Tiger(AMIT)" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="ea913023-dc0a-4fea-9199-b682118b6685">
+    <Deployment runDeploymentRoot="Tiger_AMIT__TIGERAMIT-VAIO 2019-05-05 12_41_26">
+      <DeploymentItem filename="D:\ShopSmartTool\bin\ShopSmartTool.DAL.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2019-05-05T12:41:26.6785520+05:30" queuing="2019-05-05T12:41:27.7216117+05:30" start="2019-05-05T12:41:27.7676143+05:30" finish="2019-05-05T12:41:28.4946559+05:30" />
+  <ResultSummary outcome="Completed">
+    <Counters total="7" executed="7" passed="7" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethodForTwoSimilarProducts" storage="d:\shopsmarttool\shopsmarttool.unittests\shopsmarttool.unittests\bin\debug\shopsmarttool.unittests.dll" id="da00cfb5-980b-96c0-e857-3d37f792d20b">
+      <Execution id="2aa8284b-4d8b-44d7-bad4-0212433f1dd6" />
+      <TestMethod codeBase="D:/ShopSmartTool/ShopSmartTool.UnitTests/ShopSmartTool.UnitTests/bin/Debug/ShopSmartTool.UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ShopSmartTool.UnitTests.UnitTest, ShopSmartTool.UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethodForTwoSimilarProducts" />
+    </UnitTest>
+    <UnitTest name="TestMethodForSingleProduct" storage="d:\shopsmarttool\shopsmarttool.unittests\shopsmarttool.unittests\bin\debug\shopsmarttool.unittests.dll" id="a11aa2c5-ad78-0909-16db-c0e857ed93a1">
+      <Execution id="8bb35cd4-5cd8-4056-ae86-e862e189f1dc" />
+      <TestMethod codeBase="D:/ShopSmartTool/ShopSmartTool.UnitTests/ShopSmartTool.UnitTests/bin/Debug/ShopSmartTool.UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ShopSmartTool.UnitTests.UnitTest, ShopSmartTool.UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethodForSingleProduct" />
+    </UnitTest>
+    <UnitTest name="TestMethodForFiveProducts" storage="d:\shopsmarttool\shopsmarttool.unittests\shopsmarttool.unittests\bin\debug\shopsmarttool.unittests.dll" id="39a2715c-7245-adba-a7a1-4034580c48cc">
+      <Execution id="ae14585c-0c2a-47c8-9899-85bca0426a87" />
+      <TestMethod codeBase="D:/ShopSmartTool/ShopSmartTool.UnitTests/ShopSmartTool.UnitTests/bin/Debug/ShopSmartTool.UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ShopSmartTool.UnitTests.UnitTest, ShopSmartTool.UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethodForFiveProducts" />
+    </UnitTest>
+    <UnitTest name="TestMethodForNoProduct" storage="d:\shopsmarttool\shopsmarttool.unittests\shopsmarttool.unittests\bin\debug\shopsmarttool.unittests.dll" id="8807b944-1a3c-e635-908d-0d317a3cb996">
+      <Execution id="72a3f7eb-b1db-4f7d-ac94-4505e1b46df9" />
+      <TestMethod codeBase="D:/ShopSmartTool/ShopSmartTool.UnitTests/ShopSmartTool.UnitTests/bin/Debug/ShopSmartTool.UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ShopSmartTool.UnitTests.UnitTest, ShopSmartTool.UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethodForNoProduct" />
+    </UnitTest>
+    <UnitTest name="TestMethodForThreeSimilarProducts" storage="d:\shopsmarttool\shopsmarttool.unittests\shopsmarttool.unittests\bin\debug\shopsmarttool.unittests.dll" id="5ea5dacb-1178-5053-c054-9d2495b320df">
+      <Execution id="69fae8b5-c683-4779-a77f-2ee7b0ae51a6" />
+      <TestMethod codeBase="D:/ShopSmartTool/ShopSmartTool.UnitTests/ShopSmartTool.UnitTests/bin/Debug/ShopSmartTool.UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ShopSmartTool.UnitTests.UnitTest, ShopSmartTool.UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethodForThreeSimilarProducts" />
+    </UnitTest>
+    <UnitTest name="TestMethodForFourProducts" storage="d:\shopsmarttool\shopsmarttool.unittests\shopsmarttool.unittests\bin\debug\shopsmarttool.unittests.dll" id="b90e4642-695f-63bc-06ec-fabfec447577">
+      <Execution id="945335f9-e8c0-4940-978e-a94649ad8f27" />
+      <TestMethod codeBase="D:/ShopSmartTool/ShopSmartTool.UnitTests/ShopSmartTool.UnitTests/bin/Debug/ShopSmartTool.UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ShopSmartTool.UnitTests.UnitTest, ShopSmartTool.UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethodForFourProducts" />
+    </UnitTest>
+    <UnitTest name="TestMethodForTwoProducts" storage="d:\shopsmarttool\shopsmarttool.unittests\shopsmarttool.unittests\bin\debug\shopsmarttool.unittests.dll" id="9eda0972-d853-8523-2fae-ed275cb9dd2d">
+      <Execution id="840fd982-b8d2-43fb-a68f-300b4293310b" />
+      <TestMethod codeBase="D:/ShopSmartTool/ShopSmartTool.UnitTests/ShopSmartTool.UnitTests/bin/Debug/ShopSmartTool.UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ShopSmartTool.UnitTests.UnitTest, ShopSmartTool.UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethodForTwoProducts" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="8807b944-1a3c-e635-908d-0d317a3cb996" executionId="72a3f7eb-b1db-4f7d-ac94-4505e1b46df9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a11aa2c5-ad78-0909-16db-c0e857ed93a1" executionId="8bb35cd4-5cd8-4056-ae86-e862e189f1dc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9eda0972-d853-8523-2fae-ed275cb9dd2d" executionId="840fd982-b8d2-43fb-a68f-300b4293310b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b90e4642-695f-63bc-06ec-fabfec447577" executionId="945335f9-e8c0-4940-978e-a94649ad8f27" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="da00cfb5-980b-96c0-e857-3d37f792d20b" executionId="2aa8284b-4d8b-44d7-bad4-0212433f1dd6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5ea5dacb-1178-5053-c054-9d2495b320df" executionId="69fae8b5-c683-4779-a77f-2ee7b0ae51a6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39a2715c-7245-adba-a7a1-4034580c48cc" executionId="ae14585c-0c2a-47c8-9899-85bca0426a87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="72a3f7eb-b1db-4f7d-ac94-4505e1b46df9" testId="8807b944-1a3c-e635-908d-0d317a3cb996" testName="TestMethodForNoProduct" computerName="TIGERAMIT-VAIO" duration="00:00:00.0452785" startTime="2019-05-05T12:41:27.8006162+05:30" endTime="2019-05-05T12:41:28.3436472+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="72a3f7eb-b1db-4f7d-ac94-4505e1b46df9">
+    </UnitTestResult>
+    <UnitTestResult executionId="8bb35cd4-5cd8-4056-ae86-e862e189f1dc" testId="a11aa2c5-ad78-0909-16db-c0e857ed93a1" testName="TestMethodForSingleProduct" computerName="TIGERAMIT-VAIO" duration="00:00:00.0008648" startTime="2019-05-05T12:41:28.3486475+05:30" endTime="2019-05-05T12:41:28.3596482+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8bb35cd4-5cd8-4056-ae86-e862e189f1dc">
+    </UnitTestResult>
+    <UnitTestResult executionId="840fd982-b8d2-43fb-a68f-300b4293310b" testId="9eda0972-d853-8523-2fae-ed275cb9dd2d" testName="TestMethodForTwoProducts" computerName="TIGERAMIT-VAIO" duration="00:00:00.0004144" startTime="2019-05-05T12:41:28.3626483+05:30" endTime="2019-05-05T12:41:28.3736490+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="840fd982-b8d2-43fb-a68f-300b4293310b">
+    </UnitTestResult>
+    <UnitTestResult executionId="945335f9-e8c0-4940-978e-a94649ad8f27" testId="b90e4642-695f-63bc-06ec-fabfec447577" testName="TestMethodForFourProducts" computerName="TIGERAMIT-VAIO" duration="00:00:00.0004649" startTime="2019-05-05T12:41:28.3796493+05:30" endTime="2019-05-05T12:41:28.3886498+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="945335f9-e8c0-4940-978e-a94649ad8f27">
+    </UnitTestResult>
+    <UnitTestResult executionId="2aa8284b-4d8b-44d7-bad4-0212433f1dd6" testId="da00cfb5-980b-96c0-e857-3d37f792d20b" testName="TestMethodForTwoSimilarProducts" computerName="TIGERAMIT-VAIO" duration="00:00:00.0004059" startTime="2019-05-05T12:41:28.3926500+05:30" endTime="2019-05-05T12:41:28.4056508+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2aa8284b-4d8b-44d7-bad4-0212433f1dd6">
+    </UnitTestResult>
+    <UnitTestResult executionId="69fae8b5-c683-4779-a77f-2ee7b0ae51a6" testId="5ea5dacb-1178-5053-c054-9d2495b320df" testName="TestMethodForThreeSimilarProducts" computerName="TIGERAMIT-VAIO" duration="00:00:00.0009777" startTime="2019-05-05T12:41:28.4086510+05:30" endTime="2019-05-05T12:41:28.4176515+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="69fae8b5-c683-4779-a77f-2ee7b0ae51a6">
+    </UnitTestResult>
+    <UnitTestResult executionId="ae14585c-0c2a-47c8-9899-85bca0426a87" testId="39a2715c-7245-adba-a7a1-4034580c48cc" testName="TestMethodForFiveProducts" computerName="TIGERAMIT-VAIO" duration="00:00:00.0004161" startTime="2019-05-05T12:41:28.4256519+05:30" endTime="2019-05-05T12:41:28.4426529+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ae14585c-0c2a-47c8-9899-85bca0426a87">
+    </UnitTestResult>
+  </Results>
+</TestRun>

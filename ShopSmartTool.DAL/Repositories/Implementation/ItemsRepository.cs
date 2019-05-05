@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using ShopSmartTool.Entities;
 
@@ -12,7 +11,6 @@ namespace ShopSmartTool.DAL.Repositories
         private const string _productOfferA = "Buy 3 for 130";
         private const string _productOfferB = "Buy 2 for 45";
         private const string _default = "No offers";
-        private string _selectedItems;
         #endregion Private Variables
 
 
@@ -51,40 +49,41 @@ namespace ShopSmartTool.DAL.Repositories
                 var effectiveCounts = _itemsWithCount.Where(o => o.Value > 0);
                 foreach (var item in effectiveCounts)
                 {
-
                     int quotient = 0;
                     int rem = 0;
-                  
-                    if (item.Key == "A")
+                    int itemPrice = 0;
+                    int discount = 0;
+                    switch (item.Key)
                     {
-                        int itemPrice = 50;
-                        int discount = 130;
-                        quotient = item.Value / 3;
-                        rem = item.Value % 3;
-                        price += quotient * discount + rem * itemPrice;
+
+                        case "A":
+                            itemPrice = 50;
+                            discount = 130;
+                            quotient = item.Value / 3;
+                            rem = item.Value % 3;
+                            price += quotient * discount + rem * itemPrice;
+                            break;
+                        case "B":
+                            itemPrice = 30;
+                            discount = 45;
+                            quotient = item.Value / 2;
+                            rem = item.Value % 2;
+                            price += quotient * discount + rem * itemPrice;
+                            break;
+                        case "C":
+                            itemPrice = 20;
+                            price += item.Value * itemPrice;
+                            break;
+                        case "D":
+                            itemPrice = 15;
+                            price += item.Value * itemPrice;
+                            break;
                     }
-                    if (item.Key == "B")
-                    {
-                        int itemPrice = 30;
-                        int discount = 45;
-                        quotient = item.Value / 2;
-                        rem = item.Value % 2;
-                        price += quotient * discount + rem * itemPrice;
-                    }
-                    if (item.Key == "C")
-                    {
-                        int itemPrice = 20;
-                        price += item.Value * itemPrice;
-                    }
-                    if (item.Key == "D")
-                    {
-                        int itemPrice = 15;                     
-                        price += item.Value * itemPrice;
-                    }
+                   
                 }
             }
             return price;
         }
-        #endregion Public Methods        
+        #endregion Public Methods
     }
 }
