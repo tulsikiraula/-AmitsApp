@@ -27,7 +27,7 @@ namespace ShopSmartTool.Entities
         /// The offer available on the item
         /// </summary>
         public string Offer { get; set; }
-
+        
         #endregion Members
     }
 }

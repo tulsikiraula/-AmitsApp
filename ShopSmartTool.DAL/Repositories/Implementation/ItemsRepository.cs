@@ -12,7 +12,9 @@ namespace ShopSmartTool.DAL.Repositories
         private const string _productOfferA = "Buy 3 for 130";
         private const string _productOfferB = "Buy 2 for 45";
         private const string _default = "No offers";
+        private string _selectedItems;
         #endregion Private Variables
+
 
         #region Public Methods
         /// <summary>
@@ -23,7 +25,7 @@ namespace ShopSmartTool.DAL.Repositories
         {
             return new List<Items>()
             {
-                new Items() { ItemId=1, ItemName="A", Price=50, Offer=_productOfferA },
+                new Items() { ItemId=1, ItemName="A", Price=50, Offer=_productOfferA},
                 new Items() { ItemId=2, ItemName="B", Price=30, Offer=_productOfferB },
                 new Items() { ItemId=3, ItemName="C", Price=20, Offer=_default},
                 new Items() { ItemId=4, ItemName="D", Price=15, Offer=_default}
@@ -83,6 +85,6 @@ namespace ShopSmartTool.DAL.Repositories
             }
             return price;
         }
-        #endregion Public Methods
+        #endregion Public Methods        
     }
 }

@@ -7,12 +7,15 @@ using ShopSmartTool.DAL.Repositories;
 
 namespace ShopSmartTool.UnitTests
 {
+    /// <summary>
+    /// Unit test cases for the Go Shopping application
+    /// </summary>
     [TestClass]
-    public class ShopSmartToolUnitTests
+    public class UnitTest
     {
-        ItemsRepository _itemRepository;
 
-        public ShopSmartToolUnitTests()
+        ItemsRepository _itemRepository;
+        public UnitTest()
         {
             _itemRepository = new ItemsRepository();
         }
@@ -20,7 +23,7 @@ namespace ShopSmartTool.UnitTests
         [TestMethod]
         public void TestMethodForNoProduct()
         {
-            Assert.AreEqual(0, _itemRepository.CalculateTotalAmount(string.Empty));
+            Assert.AreEqual(0, _itemRepository.CalculateTotalAmount(""));
         }
 
         [TestMethod]
@@ -60,3 +63,4 @@ namespace ShopSmartTool.UnitTests
         }
     }
 }
+

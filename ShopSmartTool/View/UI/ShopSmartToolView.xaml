@@ -2,16 +2,16 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:ShopSmartTool.ViewModel" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow"
-        Title="Shop Smart Tool" MinHeight="320" MinWidth="400"  Icon="/ShopSmartTool;component/View/Images/ShopSmart.ico">
+        Title="Shop Smart Tool" Icon="/ShopSmartTool;component/View/Images/ShopSmart.ico" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" SizeToContent="Height">
     <Window.DataContext>
         <vm:ShopSmartToolViewModel/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10" />
-            <RowDefinition />
-            <RowDefinition Height="10" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="1" ItemsSource="{Binding ItemsList}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" 
                       HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
@@ -31,9 +31,19 @@
                 <DataGridTemplateColumn Header="AddToCart" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button ToolTip="Add items to cart" BorderThickness="0" BorderBrush="Transparent" 
-                                        Command="{Binding DataContext.AddToCartCommand,RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding Path=ItemName}" Background="Transparent">
+                            <Button ToolTip="Add items to cart" Command="{Binding DataContext.AddToCartCommand,RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" 
+                                    CommandParameter="{Binding Path=ItemName}" Background="Transparent">
                                 <Image Height="20" Width="20" Source="/ShopSmartTool;component/View/Images/addCart.ico"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="RemoveFromCart" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button ToolTip="Remove items to cart" Command="{Binding DataContext.RemoveFromCartCommand,RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" 
+                                    CommandParameter="{Binding Path=ItemName}" Background="Transparent">
+                                <Image Height="20" Width="20" Source="/ShopSmartTool;component/View/Images/removeCart.ico"/>
                             </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -49,22 +59,32 @@
         <Grid Grid.Row="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
-                <RowDefinition />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="20" />
             </Grid.RowDefinitions>
-            <GroupBox MinHeight="100">
+            <GroupBox>
                 <GroupBox.Header>
-                    <TextBlock Text="Selected Items" FontWeight="Bold"/>
+                    <TextBlock Text="Bill Invoice Summary" FontWeight="Bold"/>
                 </GroupBox.Header>
-                <TextBlock FontSize="13" Text="{Binding ItemsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <ListView Grid.Row="1"  ItemsSource="{Binding ItemsBillInfo,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Item" DisplayMemberBinding="{Binding ItemName}"/>
+                                <GridViewColumn Header="Qty" DisplayMemberBinding="{Binding ItemCount}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
             </GroupBox>
-            <Button Grid.Row="1" ToolTip="Remove items from cart" BorderThickness="0" BorderBrush="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right"
-                     Command="{Binding DataContext.RemoveFromCartCommand,RelativeSource={RelativeSource AncestorType=Grid}}" Background="Transparent">
-                <Image Height="20" Width="20" Source="/ShopSmartTool;component/View/Images/removeCart.ico"/>
-            </Button>
-            <StackPanel Grid.Row="2" Orientation="Horizontal">
-                <TextBlock Text="Total amount:" />
-                <TextBlock Text="{Binding TotalAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" />
+            <TextBlock Grid.Row="1" HorizontalAlignment="Left" Text="{Binding SpecialOffer}"/>      
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock VerticalAlignment="Center"  Text="The total billable amount is £:" />
+                <TextBlock Text="{Binding TotalAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource Special}" TextWrapping="Wrap" />
             </StackPanel>
         </Grid>
     </Grid>

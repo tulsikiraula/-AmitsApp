@@ -22,10 +22,12 @@ namespace ShopSmartTool.ViewModel
         #region Priavte Variables
         private readonly IUnityContainer _container;
         private ObservableCollection<Items> _itemsList;
+        private ObservableCollection<ItemsBill> _itemsBillInfo;
         private Items _selectedItem;
         private string _itemsSelected;
-        private string _totalAmount = "£0";
+        private int _totalAmount = 0;
         private IItemsService _itemService;
+        private string _specialOffer;
         #endregion Priavte Variables
 
         #region Commands
@@ -37,55 +39,40 @@ namespace ShopSmartTool.ViewModel
         #region Public Properties
         public ObservableCollection<Items> ItemsList
         {
-            get
-            {
-                return _itemsList;
-            }
-            set
-            {
-                _itemsList = value;
-                OnPropertyChanged("ItemsList");
-            }
+            get { return _itemsList; }
+            set { _itemsList = value; OnPropertyChanged("ItemsList"); }
+        }
+        public ObservableCollection<ItemsBill> ItemsBillInfo
+        {
+            get { return _itemsBillInfo; }
+            set { _itemsBillInfo = value; OnPropertyChanged("ItemsBillInfo"); }
         }
 
         public Items SelectedItem
         {
-            get
-            {
-                return _selectedItem;
-            }
-            set
-            {
-                _selectedItem = value;
-                OnPropertyChanged("SelectedItem");
-            }
+            get { return _selectedItem; }
+            set { _selectedItem = value; OnPropertyChanged("SelectedItem"); }
         }
 
         public string ItemsSelected
         {
-            get
-            {
-                return _itemsSelected;
-            }
-            set
-            {
-                _itemsSelected = value;
-                OnPropertyChanged("ItemsSelected");
-            }
+            get { return _itemsSelected; }
+            set { _itemsSelected = value; OnPropertyChanged("ItemsSelected"); }
         }
 
-        public string TotalAmount
+        public int TotalAmount
         {
-            get
-            {
-                return _totalAmount;
-            }
-            set
-            {
-                _totalAmount = value;
-                OnPropertyChanged("TotalAmount");
-            }
+            get { return _totalAmount; }
+            set { _totalAmount = value; OnPropertyChanged("TotalAmount"); }
         }
+
+
+        public string SpecialOffer
+        {
+            get { return _specialOffer; }
+            set { _specialOffer = value; OnPropertyChanged("TotalAmount"); }
+        }
+
         #endregion
 
         #region Constructor
@@ -103,6 +90,7 @@ namespace ShopSmartTool.ViewModel
             _itemService = _container.Resolve<IItemsService>();
             if (_itemService != null)
                 ItemsList = new ObservableCollection<Items>(_itemService.GetAllItems());
+            PrepareItemsBillInfo();
         }
         #endregion Constructor
 
@@ -120,21 +108,37 @@ namespace ShopSmartTool.ViewModel
             if (!string.IsNullOrWhiteSpace(ItemsSelected))
             {
                 if (_itemService != null)
-                    TotalAmount = string.Concat("£", _itemService.CalculateTotalAmount(ItemsSelected).ToString());
+                    TotalAmount = _itemService.CalculateTotalAmount(ItemsSelected);
             }
+            PrepareItemsBillInfo();
         }
 
         /// <summary>
-        /// Clears the items from the cart
+        /// Remove the particular items from the cart
         /// </summary>
         /// <param name="obj"></param>
         private void RemoveFromCart(object obj)
         {
-            if (!string.IsNullOrWhiteSpace(ItemsSelected))
+            if (!string.IsNullOrWhiteSpace(ItemsSelected) && ItemsSelected.Contains(obj.ToString()))
             {
-                ItemsSelected = ItemsSelected.Remove(ItemsSelected.Length - 1);
-                TotalAmount = string.Concat("£", _itemService.CalculateTotalAmount(ItemsSelected).ToString());
+                ItemsSelected = ItemsSelected.Remove(ItemsSelected.IndexOf(obj.ToString()), 1);
+                PrepareItemsBillInfo();
+                TotalAmount = _itemService.CalculateTotalAmount(ItemsSelected);
+
             }
+        }
+        /// <summary>
+        /// Prepares the items bill information
+        /// </summary>
+        private void PrepareItemsBillInfo()
+        {
+            ItemsBillInfo = new ObservableCollection<ItemsBill>()
+            { 
+                new ItemsBill { ItemName = "A", ItemCount = string.IsNullOrWhiteSpace(ItemsSelected)?0: ItemsSelected.Where(o => o == 'A').Count() }, 
+                new ItemsBill { ItemName = "B", ItemCount = string.IsNullOrWhiteSpace(ItemsSelected)?0:ItemsSelected.Where(o => o == 'B').Count() } ,
+                new ItemsBill { ItemName = "C", ItemCount = string.IsNullOrWhiteSpace(ItemsSelected)?0: ItemsSelected.Where(o => o == 'C').Count() } ,
+                new ItemsBill { ItemName = "D", ItemCount = string.IsNullOrWhiteSpace(ItemsSelected)?0:ItemsSelected.Where(o => o == 'D').Count() } 
+            };
         }
         #endregion Private Methods
     }

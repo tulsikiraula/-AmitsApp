@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\ShopSmartTool\ShopSmartTool\View\UI\App.xaml
-2-122327251
+2-1503113439
 
 9405711430
 16-668323784
-View\ResourceDictionary\ShopSmartToolResources.xaml;View\UI\ShopSmartToolView.xaml;
+View\ResourceDictionary\ShopSmartToolResourceDictionary.xaml;View\UI\ShopSmartToolView.xaml;
 
-False
+True
 

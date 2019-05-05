@@ -7,14 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSmartTool.DAL", "ShopSm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSmartTool.Entities", "ShopSmartTool.Entities\ShopSmartTool.Entities.csproj", "{2AC0B478-3CC7-4216-8444-E639628C8989}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSmartTool.UnitTests", "ShopSmartTool.UnitTests\ShopSmartTool.UnitTests.csproj", "{7F28251E-CC52-45AD-BDA8-CE777F4A9DAB}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{43E5E03C-5488-4ACD-8EBA-BF9B505E29F6}"
-	ProjectSection(SolutionItems) = preProject
-		Local.testsettings = Local.testsettings
-		ShopSmartTool.vsmdi = ShopSmartTool.vsmdi
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSmartTool.UnitTests", "ShopSmartTool.UnitTests\ShopSmartTool.UnitTests\ShopSmartTool.UnitTests.csproj", "{F5C598AA-C80C-4CED-9F0C-B9FFFE5C9443}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -59,16 +54,16 @@ Global
 		{2AC0B478-3CC7-4216-8444-E639628C8989}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2AC0B478-3CC7-4216-8444-E639628C8989}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2AC0B478-3CC7-4216-8444-E639628C8989}.Release|x86.ActiveCfg = Release|Any CPU
-		{7F28251E-CC52-45AD-BDA8-CE777F4A9DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F28251E-CC52-45AD-BDA8-CE777F4A9DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F28251E-CC52-45AD-BDA8-CE777F4A9DAB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{7F28251E-CC52-45AD-BDA8-CE777F4A9DAB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{7F28251E-CC52-45AD-BDA8-CE777F4A9DAB}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{7F28251E-CC52-45AD-BDA8-CE777F4A9DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F28251E-CC52-45AD-BDA8-CE777F4A9DAB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7F28251E-CC52-45AD-BDA8-CE777F4A9DAB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{7F28251E-CC52-45AD-BDA8-CE777F4A9DAB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{7F28251E-CC52-45AD-BDA8-CE777F4A9DAB}.Release|x86.ActiveCfg = Release|Any CPU
+		{F5C598AA-C80C-4CED-9F0C-B9FFFE5C9443}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5C598AA-C80C-4CED-9F0C-B9FFFE5C9443}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5C598AA-C80C-4CED-9F0C-B9FFFE5C9443}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F5C598AA-C80C-4CED-9F0C-B9FFFE5C9443}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F5C598AA-C80C-4CED-9F0C-B9FFFE5C9443}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F5C598AA-C80C-4CED-9F0C-B9FFFE5C9443}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5C598AA-C80C-4CED-9F0C-B9FFFE5C9443}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5C598AA-C80C-4CED-9F0C-B9FFFE5C9443}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F5C598AA-C80C-4CED-9F0C-B9FFFE5C9443}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F5C598AA-C80C-4CED-9F0C-B9FFFE5C9443}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
